@@ -6,10 +6,10 @@
 <title>Orçamento do mês</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Figtree:wght@400;600&display=swap">
 <style>
-:root{--bg:#eef2f7;--surf:#fff;--ink:#14213d;--mute:#5d6b85;--line:#d5dce8;--acc:#1f4e9c;--acc-ink:#fff;--ok:#1a7f5a;--bad:#c0392b;--track:#e1e7f1;
+:root{--bg:#eef2f7;--surf:#fff;--ink:#14213d;--mute:#5d6b85;--line:#d5dce8;--acc:#7a04db;--acc-ink:#fff;--ok:#1a7f5a;--bad:#c0392b;--track:#e1e7f1;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1626;--surf:#16223a;--ink:#e8eefb;--mute:#93a3c2;--line:#2a3a5c;--acc:#6b9bf0;--acc-ink:#0e1626;--ok:#4cc79a;--bad:#ff8577;--track:#24334f;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#0e1626;--surf:#16223a;--ink:#e8eefb;--mute:#93a3c2;--line:#2a3a5c;--acc:#6b9bf0;--acc-ink:#0e1626;--ok:#4cc79a;--bad:#ff8577;--track:#24334f;color-scheme:dark}
+:root[data-theme="dark"]{--bg:#0e1626;--surf:#16223a;--ink:#e8eefb;--mute:#93a3c2;--line:#2a3a5c;--acc:#30152d;--acc-ink:#0e1626;--ok:#4cc79a;--bad:#ff8577;--track:#24334f;color-scheme:dark}
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.5 Figtree,system-ui,sans-serif}
@@ -56,7 +56,7 @@ input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid 
 <div class="bar" id="gbar"><i></i></div>
 <div class="duo"><span>Receitas<b id="inc"></b></span><span style="text-align:right">Despesas<b id="exp"></b></span></div>
 
-<h2>Novo movimento</h2>
+<h2>registrar movimento</h2>
 <div class="panel">
 <div class="seg">
 <label><input type="radio" name="t" value="d" checked><span>Despesa</span></label>
@@ -73,9 +73,9 @@ input:focus-visible,select:focus-visible,button:focus-visible{outline:2px solid 
 
 <h2>Movimentos do mês</h2>
 <div class="panel" id="list"></div>
-</main>
+</main>         
 <script>
-var CATS=["Habitação","Alimentação","Transportes","Saúde","Lazer","Outros"];
+var CATS=["Habitação","Alimentação","Transportes","Educação","Saúde","Lazer","Outros"];
 var S=load();
 function load(){try{var s=JSON.parse(localStorage.getItem("orc"));if(s&&s.tx)return s}catch(e){}return{tx:[],b:{}}}
 function save(){try{localStorage.setItem("orc",JSON.stringify(S))}catch(e){}}
